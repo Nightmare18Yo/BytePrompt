@@ -28,6 +28,18 @@ while True:
         var_name = input('Enter Variable Name: ')
         variable = input('Enter String Value: ')
         globals()[var_name] = variable
+    elif code == 'varbool':
+        var_name = input('Enter Variable Name: ')
+        if var_name.isidentifier():
+            variable = input('Enter Boolean Value (true/false): ')
+            if variable.lower() == 'true':
+                globals()[var_name] = True
+            elif variable.lower() == 'false':
+                globals()[var_name] = False
+            else:
+                print("Invalid input for boolean variable. Please enter either 'true' or 'false'.")
+        else:
+            print("Invalid variable name. Please enter a valid identifier.")
     elif code == 'printvar':
         var_name = input('Enter Variable Name: ')
         if var_name in globals():
@@ -73,6 +85,7 @@ while True:
         break
     else:
         print("Invalid command.")
+
 
 
     
